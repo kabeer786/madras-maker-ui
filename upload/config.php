@@ -27,6 +27,6 @@ define('DB_HOSTNAME', 'localhost');
 //define('DB_PASSWORD', '#include786');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_DATABASE', 'altsense_v2_demo');
+define('DB_DATABASE', 'makerspace1');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
