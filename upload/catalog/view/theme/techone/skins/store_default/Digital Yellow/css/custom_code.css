@@ -1,0 +1,7 @@
+.main-content .pattern > .container, .standard-body .main-content .pattern > .container { padding-bottom: 30px; }
+#top .search_form input { border: none;box-shadow: none;-webkit-box-shadow: none;-moz-box-shadow: none; }
+#top .search_form .search-cat { border: none; }
+.header-type-5 #top-bar .overflow { border: none; }
+.common-home .pattern > .container > .row:first-child .row { margin: 0px -5px; }
+.common-home .pattern > .container > .row:first-child .row > div { padding-left: 5px;padding-right: 5px; }
+.camera_slider { margin-top: 10px !important; }

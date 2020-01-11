@@ -1,0 +1,7 @@
+.vertical ul.megamenu > li:hover > a { color: #333; }
+.main-content .container .row { margin: 0px -10px; }
+.main-content .container .row > div { padding-left: 10px;padding-right: 10px; }
+.vertical .megamenu-wrapper { padding-bottom: 23px; }
+.col-sm-3 .box .box-heading, .col-sm-4 .box .box-heading, .col-md-3 .box .box-heading, .col-md-4 .box .box-heading { font-weight: 700; }
+.col-sm-3 .products .row > div .product .image, .col-sm-4 .products .row > div .product .image, .col-md-3 .products .row > div .product .image, .col-md-4 .products .row > div .product .image { border: none; }
+.col-sm-3 .products .row > div .product .left, .col-sm-4 .products .row > div .product .left, .col-md-3 .products .row > div .product .left, .col-md-4 .products .row > div .product .left { max-width: 80px; }

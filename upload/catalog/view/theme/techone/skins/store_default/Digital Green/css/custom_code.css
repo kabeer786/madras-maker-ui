@@ -1,0 +1,13 @@
+.common-home .main-content .container .row { margin: 0px -10px; }
+.common-home .main-content .container .row > div { padding-left: 10px;padding-right: 10px; }
+#column-right { margin-top: -10px; }
+.col-sm-3 .box .box-heading, .col-sm-4 .box .box-heading, .col-md-3 .box .box-heading, .col-md-4 .box .box-heading { font-weight: 700; }
+.col-sm-3 .products .row > div .product .image, .col-sm-4 .products .row > div .product .image, .col-md-3 .products .row > div .product .image, .col-md-4 .products .row > div .product .image { border: none; }
+.col-sm-3 .products .row > div .product .left, .col-sm-4 .products .row > div .product .left, .col-md-3 .products .row > div .product .left, .col-md-4 .products .row > div .product .left { max-width: 78px; }
+.col-sm-3 .products .row > div .product, .col-sm-4 .products .row > div .product, .col-md-3 .products .row > div .product, .col-md-4 .products .row > div .product { padding-top: 10px;padding-bottom: 10px; }
+.col-sm-3 .products .product-grid, .col-sm-4 .products .product-grid, .col-md-3 .products .product-grid, .col-md-4 .products .product-grid {margin: -10px 0px; }
+.common-home .col-sm-3 .box-with-products, .common-home .col-sm-4 .box-with-products, .common-home .col-md-3 .box-with-products, .common-home .col-md-4 .box-with-products { padding: 13px 20px 10px 20px;margin: 30px 0px 0px 0px;border: 1px solid #e6e6e6;overflow: hidden; }
+.col-sm-3 .box.box-with-products .box-content, .col-sm-4 .box.box-with-products .box-content, .col-md-3 .box.box-with-products .box-content, .col-md-4 .box.box-with-products .box-content  { padding-top: 10px; }
+.common-home .col-sm-3 .box.box-with-products > .prev, .common-home .col-sm-4 .box.box-with-products > .prev, .common-home .col-md-3 .box.box-with-products > .prev, .common-home .col-md-4 .box.box-with-products > .prev, .common-home .col-sm-3 .box.box-with-products > .next, .common-home .col-sm-4 .box.box-with-products > .next, .common-home .col-md-3 .box.box-with-products > .next, .common-home .col-md-4 .box.box-with-products > .next { margin-right: 10px;top: 18px; }
+.camera_slider { margin-left: 34%; }
+@media (max-width: 991px) { .camera_slider { margin-left:0; } }
