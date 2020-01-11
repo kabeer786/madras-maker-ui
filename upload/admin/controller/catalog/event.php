@@ -13,12 +13,12 @@ class ControllerCatalogEvent extends Controller {
 		$this->document->setTitle("Add room");
 
 		$this->load->model('catalog/event');
-
 		$this->getList();
 			 
 	}
 
 	public function add() {
+		//echo "add called";die;
 		$this->load->language('catalog/product');
 
 		$this->document->setTitle("Hall Details");
@@ -64,7 +64,7 @@ class ControllerCatalogEvent extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true));
+			$this->response->redirect($this->url->link('catalog/event', 'token=' . $this->session->data['token'] . $url, true));
 		}
 
 		$this->getForm();
@@ -389,7 +389,7 @@ class ControllerCatalogEvent extends Controller {
 				'special'    => $special,
 				'quantity'   => $result['quantity'],
 				'status'     => $result['status'] ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
-				'edit'       => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $result['product_id'] . $url, true)
+				'edit'       => $this->url->link('catalog/event/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $result['product_id'] . $url, true)
 			);
 		}
 
@@ -546,7 +546,7 @@ class ControllerCatalogEvent extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 	
 
-		$this->response->setOutput($this->load->view('catalog/product_list', $data));
+		$this->response->setOutput($this->load->view('catalog/room_list', $data));
 	}
 
 	protected function getForm() {
@@ -1452,7 +1452,7 @@ class ControllerCatalogEvent extends Controller {
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 
-		$this->response->setOutput($this->load->view('catalog/product_form', $data));
+		$this->response->setOutput($this->load->view('catalog/room_form', $data));
 	}
 
 	protected function validateForm() {
