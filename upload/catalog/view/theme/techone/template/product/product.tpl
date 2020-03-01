@@ -1026,3 +1026,11 @@ echo '<script type="text/javascript" src="catalog/view/theme/' . $config->get($c
 
 <?php include('catalog/view/theme/'.$config->get($config->get('config_theme') . '_directory').'/template/new_elements/wrapper_bottom.tpl'); ?>
 <?php echo $footer; ?>
+
+<script>
+ //mine changed
+$(document).ready(function(){
+		$(".description").html($("#tab-description").html());
+		$("#tabs,#tab-description").html('');
+})
+</script>

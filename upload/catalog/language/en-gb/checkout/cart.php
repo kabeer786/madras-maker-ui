@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']            = 'school admission';
+$_['heading_title']            = 'events & Halls';
 
 // Text
 $_['text_success']             = 'Success: Your request  <a href="%s">%s</a>  <a href="%s"> is successfull</a>!';

@@ -3,11 +3,11 @@
 $_['text_search']              = 'Search';
 $_['text_brand']               = 'school info';
 $_['text_manufacturer']        = 'school info:';
-$_['text_model']               = 'admission Code:';
+$_['text_model']               = 'Organaized By:';
 $_['text_reward']              = 'remaining admission slots:';
 $_['text_points']              = 'Price in reward points:';
-$_['text_stock']               = 'school admission status:';
-$_['text_instock']             = 'school admission available';
+$_['text_stock']               = 'Ticket Availability:';
+$_['text_instock']             = ' Available';
 $_['text_tax']                 = 'Ex Tax:';
 $_['text_discount']            = ' or more ';
 $_['text_option']              = 'Available Options';
@@ -32,7 +32,7 @@ $_['text_month']               = 'month';
 $_['text_year']                = 'year';
 
 // Entry
-$_['entry_qty']                = 'Appointment Days';
+$_['entry_qty']                = 'Number of Tickets';
 $_['entry_name']               = 'Your Name';
 $_['entry_review']             = 'Your Review';
 $_['entry_rating']             = 'Rating';

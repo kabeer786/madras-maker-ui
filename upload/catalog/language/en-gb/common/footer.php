@@ -14,4 +14,4 @@ $_['text_account']      = 'school Account';
 $_['text_order']        = 'Admission History';
 $_['text_wishlist']     = 'local school List';
 $_['text_newsletter']   = 'talib Newsletter';
-$_['text_powered']      = 'Powered By Talib School Finder';
+$_['text_powered']      = 'Managed By Madras Maker Space';

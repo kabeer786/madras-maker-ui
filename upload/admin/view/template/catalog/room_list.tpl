@@ -193,6 +193,15 @@ h1{
     margin: 0 0 2rem 0;
   }
 } */
+
+
+.cols{
+  width:230px !important;
+  float:left;
+}
+.container,.cols{
+      width: 230px !important;
+}
   </style>
 <?php echo $header; ?><?php echo $column_left; ?>
 <div id="content">
@@ -223,7 +232,7 @@ h1{
     <?php } ?>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-list"></i> <?php echo $text_list; ?></h3>
+        <h3 class="panel-title"><i class="fa fa-list"></i>All Halls/Venue Details</h3>
       </div>
       <div class="panel-body">
         <div class="well hidden">
@@ -239,10 +248,7 @@ h1{
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="form-group">
-                <label class="control-label" for="input-price"><?php echo $entry_price; ?></label>
-                <input type="text" name="filter_price" value="<?php echo $filter_price; ?>" placeholder="<?php echo $entry_price; ?>" id="input-price" class="form-control" />
-              </div>
+            
               <div class="form-group">
                 <label class="control-label" for="input-quantity"><?php echo $entry_quantity; ?></label>
                 <input type="text" name="filter_quantity" value="<?php echo $filter_quantity; ?>" placeholder="<?php echo $entry_quantity; ?>" id="input-quantity" class="form-control" />
@@ -287,10 +293,13 @@ h1{
         </div>
         <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-product">
          <div class="wrapper">
-           <h1>Upcoming Events</h1>
+           <h1>My Venue/Halls </h1>
 <!--mine-->
+
            <?php if ($products) { ?>
+           
             <?php foreach ($products as $product) {    ?>
+             
              
           <div class="cols">
                 <div class="col" ontouchstart="this.classList.toggle('hover');">
@@ -298,15 +307,15 @@ h1{
                     <div class="front" style="background-image: url(<?php echo str_replace('40','500',$product['image']); ?>) !important">
                       <div class="inner">
                         <p><?php echo $product['name']; ?></p>
-                        <span>Oraganized By : <?php echo $product['model']; ?></span>
+                        <span> City :  Chennai</span>
                       </div>
                     </div>
                     <div class="back">
                       <div class="inner">
                           <p><?php echo $product['name']; ?></p> 
                           <p><?php if ($product['status'] =="Enabled") {
-                                echo  "published"; } else {echo "not published";  } ?></p> 
-                          <span>: <a href="<?php echo $product['edit']; ?>"> Modify this Event  </a></span>                                
+                                echo  "Available"; } else {echo "not Available";  } ?></p> 
+                          <span> <a href="<?php echo $product['edit']; ?>"> Edit Venue Details  </a></span>                                
                       </div>
                     </div>
                   </div>

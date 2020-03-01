@@ -497,3 +497,30 @@ color:#000;
 text-shadow:none;
 }
 
+.tp-caption.revslider-big-text {
+font-size:72px;
+line-height:64px;
+font-weight:400;
+font-family:Montserrat;
+color:rgb(46, 93, 96);
+text-decoration:none;
+letter-spacing:-4px;
+background-color:transparent;
+border-width:0px;
+border-color:rgb(34, 34, 34);
+border-style:none;
+}
+
+.tp-caption.revslider-excerpt-lower {
+font-size:22px;
+letter-spacing:-1px;
+line-height:30px;
+text-decoration:none;
+color:#2e5d60;
+background-color:transparent;
+font-weight:300;
+border-width:0px;
+border-color:rgb(34, 34, 34);
+border-style:none;
+}
+

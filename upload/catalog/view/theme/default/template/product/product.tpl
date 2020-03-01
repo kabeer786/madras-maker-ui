@@ -1153,7 +1153,7 @@ $('#button-review').on('click', function() {
 
 
 $(document).ready(function() {
-
+  
 	$('.thumbnails').magnificPopup({
 
 		type:'image',

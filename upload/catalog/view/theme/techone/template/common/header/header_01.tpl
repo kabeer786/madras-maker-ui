@@ -15,7 +15,7 @@ $category_id = $theme_options->getCurrentCategory();
 				<div class="shadow"></div>
 				<div class="pattern">
 					<div class="container">
-						<div class="top-bar-switcher">
+						<div class="top-bar-switcher hidden">
 							<?php echo $currency.$language; ?>
 						</div>
 						

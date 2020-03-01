@@ -3,7 +3,7 @@ $theme_options = $registry->get('theme_options');
 $config = $registry->get('config'); ?>
 <?php $cart_info = $theme_options->getCart(); ?>
 <!-- Cart block -->
-<div id="cart_block" class="dropdown">
+<div id="cart_block" class="hidden dropdown">
 	<div class="cart-heading dropdown-toogle" data-toggle="dropdown" data-hover="dropdown">
 		<span class="cart-icon" id="cart_count_ajax">
 			<span class="count" id="cart_count"><?php echo $cart_info['total_item']; ?></span>

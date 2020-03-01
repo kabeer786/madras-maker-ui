@@ -9,6 +9,8 @@ html, body {
   margin: 0;
   padding: 0;
 }
+/*temp code till menu is enabled*/
+ 
 .hidden{
     display:none !important;
 }
@@ -81,6 +83,8 @@ input:checked + .slider:before {
 .info-padding{
       padding-left: 210px;
 }
+
+
 </style>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  
@@ -89,14 +93,14 @@ input:checked + .slider:before {
  <script>
 
  $(document).ready(function(){
-
+ 
  
     $(".city").on('change',function(){
     //  alert($(this).find(':selected').text())
         $("#input-location").val($(this).find(':selected').text())
     })
 
-$(".venue-type").change(function(){
+/*$(".venue-type").change(function(){
   console.log('test')
     if ( this.checked ){
           $(".venue-details-part").removeClass('hidden');      
@@ -104,7 +108,7 @@ $(".venue-type").change(function(){
     else{        
           $(".venue-details-part").addClass('hidden');
     }
-});
+});*/
 
         $( ".eventdate" ).datepicker();
  })
@@ -144,7 +148,7 @@ $(".venue-type").change(function(){
       <div class="panel-body">
         <form action="<?php echo  str_replace('product','event',$action);?>" method="post" enctype="multipart/form-data" id="form-product" class="form-horizontal">
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#tab-general" data-toggle="tab">Event Details</a></li>
+            <li class="active"><a href="#tab-general" data-toggle="tab">Hall Details</a></li>
             <li class="hidden"><a href="#tab-data" data-toggle="tab"><?php echo $tab_data; ?></a></li>
             <li class="hidden" ><a href="#tab-links" data-toggle="tab"><?php echo $tab_links; ?></a></li>
             <li  class="hidden" ><a href="#tab-attribute" data-toggle="tab"><?php echo $tab_attribute; ?></a></li>
@@ -176,26 +180,27 @@ $(".venue-type").change(function(){
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
+                    <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Hall/Venue Details</label>
                     <div class="col-sm-10">
                       <textarea name="product_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>" class="form-control summernote"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['description'] : ''; ?></textarea>
                     </div>
                   </div>
-                <div class="form-group">
+
+                <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-upc"><span >Event start date</span></label>
                 <div class="col-sm-10">
                   <input class="date eventdate form-control"  name="upc" value="<?php echo $upc; ?>" placeholder="Event date" id="input-upc"  />
                 </div>
               </div>
 
-             <div class="form-group">
+             <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-upc"><span >Event end date</span></label>
                 <div class="col-sm-10">
                   <input class="date eventdate form-control"  name="upc" value="<?php echo $upc; ?>" placeholder="Event date" id="input-upc"  />
                 </div>
               </div>
                 <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-upc"><span >Repeat event Monthly</span></label>
+                  <label class="col-sm-2 control-label" for="input-upc"><span >Parking Available</span></label>
                    <div class="col-sm-10">
                              <label class="switch">
                             <input type="checkbox">
@@ -210,7 +215,7 @@ $(".venue-type").change(function(){
                 <table class="table table-striped table-bordered table-hover">
                   <thead>
                     <tr>
-                      <td class="text-left"><?php echo $entry_image; ?></td>
+                      <td class="text-left">Upload Detailed Images</td>
                     </tr>
                   </thead>
                   
@@ -225,8 +230,8 @@ $(".venue-type").change(function(){
                 <table id="images" class="table table-striped table-bordered table-hover">
                   <thead>
                     <tr>
-                      <td class="text-left"><?php echo $entry_additional_image; ?></td>
-                      <td class="text-right"><?php echo $entry_sort_order; ?></td>
+                      <td class="text-left">Upload Additional Hall Images</td>
+                      <td class="text-right hidden"><?php echo $entry_sort_order; ?></td>
                       <td></td>
                     </tr>
                   </thead>
@@ -253,7 +258,7 @@ $(".venue-type").change(function(){
                 
 
                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-upc"><span >Venue /HAll Decided ?</span></label>
+                  <label class="col-sm-2 control-label" for="input-upc"><span >Projector /Speaker /Mic Available ?</span></label>
                
                    <div class="col-sm-10">
                              <label class="switch">
@@ -261,7 +266,7 @@ $(".venue-type").change(function(){
                             <span class="slider round"></span>
                               </label>
                  </div>
-                    <span class="info-padding">if you  are looking for Halls  <a href=""> Checkout Madras Makerspace Halls</a></span>
+                    <span class="info-padding  ">can event Linked from Madras Maker space ?<a href=""> Link your event with this Venue</a></span>
               </div>
             <div class="form-group hidden venue-details-part location-group">
                 <label class="col-sm-2 control-label" for="input-sku"><span > Venue /Hall Details </span></label>
@@ -271,7 +276,7 @@ $(".venue-type").change(function(){
               </div>
               
                <div class="form-group location-group">
-                <label class="col-sm-2 control-label" for="input-location"><?php echo $entry_location; ?></label>
+                <label class="col-sm-2 control-label" for="input-location"> City </label>
                 <div class="col-sm-10">
                <input type="text" name="location" value="<?php echo $location; ?>" placeholder="<?php echo $entry_location; ?>" id="input-location"  class="hidden" /> 
                <select  class="form-control city"> 
@@ -285,17 +290,26 @@ $(".venue-type").change(function(){
                
                 </div>
               </div>
+                     
               
               <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="<?php echo $help_ean; ?>">address</span></label>
+                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="<?php echo $help_ean; ?>">Venue /Hall address</span></label>
                 <div class="col-sm-10">
                   <input type="text" name="ean" value="<?php echo $ean; ?>" placeholder="address" id="input-ean" class="form-control" />
 
                 </div>
               </div>
+
+                           
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-price">Daily Rent</label>
+                <div class="col-sm-10">
+                  <input type="text" name="price" value="<?php echo $price; ?>" placeholder=" Daily Rent /Day" id="input-price" class="form-control" />
+                </div>
+              </div>
               
                <div class="form-group">
-                <label class="col-sm-2 control-label" for="input-quantity">available Seats</label>
+                <label class="col-sm-2 control-label" for="input-quantity"> Seating Capacity</label>
                 <div class="col-sm-10">
                   <input type="text" name="quantity" value="<?php echo $quantity; ?>" placeholder="<?php echo $entry_quantity; ?>" id="input-quantity" class="form-control" />
                 </div>
@@ -308,32 +322,32 @@ $(".venue-type").change(function(){
                 </div>
               </div>
               <div class="form-group required">
-                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="">Organaizer Contact Number</span></label>
+                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="">Owner/House Keeping Contact Number</span></label>
                 <div class="col-sm-10">
                   
                   <input type="text" name="contactnumber" value="<?php echo $contactnumber; ?>" placeholder="Contact Number" id="input-contact" class="form-control" />
                 </div>
               </div>
                <div class="form-group  required">
-                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="">Website</span></label>
+                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="">Land Mark /Near by</span></label>
                 <div class="col-sm-10">
                   
-                  <input type="text" name="website" value="<?php echo $website; ?>" placeholder="Website" id="input-website" class="form-control" />
+                  <input type="text" name="website" value="<?php echo $website; ?>" placeholder="Land Mark /Near by" id="input-website" class="form-control" />
                 </div>
               </div>
               <div class="form-group  required">
-                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="">Organaizer Email ID</span></label>
+                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="">On Bulk Booking -Negotiable</span></label>
                 <div class="col-sm-10">
                   
-                  <input type="text" name="emailId" value="<?php echo $emailId; ?>" placeholder="Email ID" id="input-emailId" class="form-control" />
+                  <input type="text" name="emailId" value="<?php echo $emailId; ?>" placeholder="On Bulk Booking -Negotiable" id="input-emailId" class="form-control" />
                 </div>
               </div>
                <div class="form-group  required">
-                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="">Trainer Details and Profile</span></label>
+                <label class="col-sm-2 control-label" for="input-ean"><span data-toggle="tooltip" title="">Additional Details & Terms /Conditions </span></label>
                 <div class="col-sm-10">
                   
                  
-                  <textarea class="form-control" name="admessage" placeholder="Trainer Details and Profile" id="input-admessage" value=""><?php echo $admessage; ?></textarea>
+                  <textarea class="form-control" name="admessage" placeholder="Additional Details & Terms /Conditions" id="input-admessage" value=""><?php echo $admessage; ?></textarea>
                 </div>
               </div>
               <div class="form-group  required hidden">

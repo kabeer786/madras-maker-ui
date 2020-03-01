@@ -37,7 +37,7 @@ if($registry->has('theme_options') == true) {
 		<div class="background">
 			<div class="shadow"></div>
 			<div class="pattern">
-				<div class="container">
+				<div class="container hidden">
 					<?php 
 					$footer_top = $modules->getModules('footer_top');
 					if( count($footer_top) ) { 

@@ -5,10 +5,7 @@ class ControllerCatalogEvent extends Controller {
 
 
 	public function index() {
-	
-	
-	
-		$this->load->language('catalog/product');
+		$this->load->language('catalog/event');
 	//	echo "event lang  ".$this->language->get('room_heading_title');die;
 		$this->document->setTitle("Add room");
 
@@ -19,11 +16,11 @@ class ControllerCatalogEvent extends Controller {
 
 	public function add() {
 		//echo "add called";die;
-		$this->load->language('catalog/product');
+		$this->load->language('catalog/event');
 
 		$this->document->setTitle("Hall Details");
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/event');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_event->addProduct($this->request->post);
@@ -71,11 +68,11 @@ class ControllerCatalogEvent extends Controller {
 	}
 
 	public function edit() {
-		$this->load->language('catalog/product');
+		$this->load->language('catalog/event');
 
 		$this->document->setTitle("Hall Details");
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/event');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validateForm()) {
 			$this->model_catalog_event->editProduct($this->request->get['product_id'], $this->request->post);
@@ -116,18 +113,18 @@ class ControllerCatalogEvent extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true));
+			$this->response->redirect($this->url->link('catalog/event', 'token=' . $this->session->data['token'] . $url, true));
 		}
 
 		$this->getForm();
 	}
 
 	public function delete() {
-		$this->load->language('catalog/product');
+		$this->load->language('catalog/event');
 
 		$this->document->setTitle("Hall Details");
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/event');
 
 		if (isset($this->request->post['selected']) && $this->validateDelete()) {
 			foreach ($this->request->post['selected'] as $product_id) {
@@ -170,18 +167,18 @@ class ControllerCatalogEvent extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true));
+			$this->response->redirect($this->url->link('catalog/event', 'token=' . $this->session->data['token'] . $url, true));
 		}
 
 		$this->getList();
 	}
 
 	public function copy() {
-		$this->load->language('catalog/product');
+		$this->load->language('catalog/event');
 
 		$this->document->setTitle("Hall Details");
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/event');
 
 		if (isset($this->request->post['selected']) && $this->validateCopy()) {
 			foreach ($this->request->post['selected'] as $product_id) {
@@ -224,7 +221,7 @@ class ControllerCatalogEvent extends Controller {
 				$url .= '&page=' . $this->request->get['page'];
 			}
 
-			$this->response->redirect($this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true));
+			$this->response->redirect($this->url->link('catalog/event', 'token=' . $this->session->data['token'] . $url, true));
 		}
 
 		$this->getList();
@@ -333,12 +330,12 @@ class ControllerCatalogEvent extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => "Hall Details",
-			'href' => $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true)
+			'href' => $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . $url, true)
 		);
 
-		$data['add'] = $this->url->link('catalog/product/add', 'token=' . $this->session->data['token'] . $url, true);
-		$data['copy'] = $this->url->link('catalog/product/copy', 'token=' . $this->session->data['token'] . $url, true);
-		$data['delete'] = $this->url->link('catalog/product/delete', 'token=' . $this->session->data['token'] . $url, true);
+		$data['add'] = $this->url->link('catalog/event/add', 'token=' . $this->session->data['token'] . $url, true);
+		$data['copy'] = $this->url->link('catalog/event/copy', 'token=' . $this->session->data['token'] . $url, true);
+		$data['delete'] = $this->url->link('catalog/event/delete', 'token=' . $this->session->data['token'] . $url, true);
 
 		$data['products'] = array();
 
@@ -480,12 +477,12 @@ class ControllerCatalogEvent extends Controller {
 			$url .= '&page=' . $this->request->get['page'];
 		}
 
-		$data['sort_name'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=pd.name' . $url, true);
-		$data['sort_model'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.model' . $url, true);
-		$data['sort_price'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.price' . $url, true);
-		$data['sort_quantity'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.quantity' . $url, true);
-		$data['sort_status'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.status' . $url, true);
-		$data['sort_order'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.sort_order' . $url, true);
+		$data['sort_name'] = $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . '&sort=pd.name' . $url, true);
+		$data['sort_model'] = $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . '&sort=p.model' . $url, true);
+		$data['sort_price'] = $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . '&sort=p.price' . $url, true);
+		$data['sort_quantity'] = $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . '&sort=p.quantity' . $url, true);
+		$data['sort_status'] = $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . '&sort=p.status' . $url, true);
+		$data['sort_order'] = $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . '&sort=p.sort_order' . $url, true);
 
 		$url = '';
 
@@ -525,7 +522,7 @@ class ControllerCatalogEvent extends Controller {
 		$pagination->total = $product_total;
 		$pagination->page = $page;
 		$pagination->limit = $this->config->get('config_limit_admin');
-		$pagination->url = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url . '&page={page}', true);
+		$pagination->url = $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . $url . '&page={page}', true);
 
 		$data['pagination'] = $pagination->render();
 
@@ -741,16 +738,16 @@ class ControllerCatalogEvent extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => "Hall Details",
-			'href' => $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true)
+			'href' => $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . $url, true)
 		);
 
 		if (!isset($this->request->get['product_id'])) {
-			$data['action'] = $this->url->link('catalog/product/add', 'token=' . $this->session->data['token'] . $url, true);
+			$data['action'] = $this->url->link('catalog/event/add', 'token=' . $this->session->data['token'] . $url, true);
 		} else {
-			$data['action'] = $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $this->request->get['product_id'] . $url, true);
+			$data['action'] = $this->url->link('catalog/event/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $this->request->get['product_id'] . $url, true);
 		}
 
-		$data['cancel'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, true);
+		$data['cancel'] = $this->url->link('catalog/event', 'token=' . $this->session->data['token'] . $url, true);
 
 		if (isset($this->request->get['product_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$product_info = $this->model_catalog_event->getProduct($this->request->get['product_id']);
@@ -1456,7 +1453,7 @@ class ControllerCatalogEvent extends Controller {
 	}
 
 	protected function validateForm() {
-		if (!$this->user->hasPermission('modify', 'catalog/product')) {
+		if (!$this->user->hasPermission('modify', 'catalog/event')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
@@ -1496,7 +1493,7 @@ class ControllerCatalogEvent extends Controller {
 	}
 
 	protected function validateDelete() {
-		if (!$this->user->hasPermission('modify', 'catalog/product')) {
+		if (!$this->user->hasPermission('modify', 'catalog/event')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
@@ -1504,7 +1501,7 @@ class ControllerCatalogEvent extends Controller {
 	}
 
 	protected function validateCopy() {
-		if (!$this->user->hasPermission('modify', 'catalog/product')) {
+		if (!$this->user->hasPermission('modify', 'catalog/event')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
@@ -1515,7 +1512,7 @@ class ControllerCatalogEvent extends Controller {
 		$json = array();
 
 		if (isset($this->request->get['filter_name']) || isset($this->request->get['filter_model'])) {
-			$this->load->model('catalog/product');
+			$this->load->model('catalog/event');
 			$this->load->model('catalog/option');
 
 			if (isset($this->request->get['filter_name'])) {
