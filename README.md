@@ -11,6 +11,12 @@ Note : Please feel free to contribute this Ui and use in your network
 
 ![Image of Yaktocat](https://github.com/kabeer786/madras-maker-ui/blob/master/upload/image/catalog/event/logo.PNG)
 
+<b>Example</b>
+
+![Image of Yaktocat](https://github.com/kabeer786/madras-maker-ui/blob/master/eventpublishing.PNG)
+
+
+
 
 
 
